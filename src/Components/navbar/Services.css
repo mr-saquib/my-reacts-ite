@@ -1,0 +1,204 @@
+/* ============================================================
+   SERVICES SECTION
+============================================================ */
+
+.services-container {
+  position: relative;
+  padding: 120px 6%;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+  background: var(--bg-surface);
+}
+
+/* Dot pattern background */
+.services-container::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background-image: radial-gradient(rgba(0,240,180,0.08) 1px, transparent 1px);
+  background-size: 32px 32px;
+  pointer-events: none;
+}
+
+/* Top edge glow line */
+.services-container::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 10%;
+  right: 10%;
+  height: 1px;
+  background: linear-gradient(90deg, transparent, var(--cyan), transparent);
+}
+
+/* ---- HEADER ---- */
+.services-header {
+  text-align: center;
+  margin-bottom: 64px;
+  position: relative;
+  z-index: 2;
+}
+
+.services-header h2 {
+  font-family: var(--font-display);
+  font-weight: 800;
+  font-size: clamp(2rem, 5vw, 3.5rem);
+  letter-spacing: -0.02em;
+  color: var(--text-primary);
+  margin-bottom: 16px;
+}
+
+.services-header h2 .accent { color: var(--cyan); }
+
+.services-header p {
+  font-family: var(--font-body);
+  font-size: 1rem;
+  color: var(--text-secondary);
+  max-width: 520px;
+  margin: 0 auto;
+  line-height: 1.7;
+}
+
+/* ---- SLIDER ---- */
+.slider-wrapper {
+  position: relative;
+  display: flex;
+  align-items: center;
+  width: 100%;
+  max-width: 1200px;
+  z-index: 2;
+}
+
+.services-slider {
+  display: flex;
+  overflow-x: auto;
+  gap: 20px;
+  padding: 16px 4px 28px;
+  scroll-behavior: smooth;
+  scrollbar-width: none;
+  -ms-overflow-style: none;
+}
+.services-slider::-webkit-scrollbar { display: none; }
+
+/* Navigation Buttons */
+.slider-btn {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  background: var(--bg-card);
+  border: 1px solid var(--border-dim);
+  color: var(--text-secondary);
+  width: 44px;
+  height: 44px;
+  border-radius: 50%;
+  font-size: 1rem;
+  cursor: pointer;
+  z-index: 10;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  transition: all 0.25s ease;
+}
+
+.slider-btn:hover {
+  border-color: var(--cyan);
+  color: var(--cyan);
+  box-shadow: var(--glow-cyan);
+  transform: translateY(-50%) scale(1.05);
+}
+
+.left-btn { left: -24px; }
+.right-btn { right: -24px; }
+
+/* ---- GLASS CARDS ---- */
+.glass-card {
+  min-width: 300px;
+  max-width: 300px;
+  flex-shrink: 0;
+  background: var(--bg-card);
+  border: 1px solid var(--border-dim);
+  border-radius: var(--radius-md);
+  padding: 36px 28px;
+  color: var(--text-primary);
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+  transition: all 0.3s ease;
+  cursor: default;
+  position: relative;
+  overflow: hidden;
+}
+
+/* Top accent line on hover */
+.glass-card::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 2px;
+  background: linear-gradient(90deg, var(--cyan), var(--electric));
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+.glass-card:hover {
+  border-color: var(--border-bright);
+  transform: translateY(-6px);
+  box-shadow: var(--glow-card);
+}
+
+.glass-card:hover::before { opacity: 1; }
+
+.service-icon {
+  font-size: 2rem;
+  line-height: 1;
+  filter: grayscale(0.2);
+  transition: transform 0.3s ease;
+}
+
+.glass-card:hover .service-icon {
+  transform: scale(1.15);
+}
+
+.service-title {
+  font-family: var(--font-display);
+  font-size: 1.15rem;
+  font-weight: 700;
+  color: var(--text-primary);
+  letter-spacing: -0.01em;
+}
+
+.service-description {
+  font-family: var(--font-body);
+  font-size: 0.9rem;
+  line-height: 1.65;
+  color: var(--text-secondary);
+  flex-grow: 1;
+}
+
+.service-link {
+  font-family: var(--font-mono);
+  font-size: 0.72rem;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--cyan);
+  text-decoration: none;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  margin-top: 4px;
+  transition: gap 0.2s ease;
+}
+
+.glass-card:hover .service-link { gap: 12px; }
+
+@media (max-width: 768px) {
+  .glass-card { min-width: 270px; max-width: 270px; }
+  .slider-btn { display: none; }
+  .services-container { padding: 80px 5%; }
+}

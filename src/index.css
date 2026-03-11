@@ -1,0 +1,143 @@
+@import url('https://fonts.googleapis.com/css2?family=Share+Tech+Mono&family=Syne:wght@400;600;700;800&family=DM+Sans:wght@300;400;500&display=swap');
+
+/* ============================================================
+   UNIVERSE LOGIC — DESIGN SYSTEM
+   Theme: Cyberpunk Terminal / Dark Industrial
+============================================================ */
+
+:root {
+  --bg-void:       #050508;
+  --bg-surface:    #0a0b10;
+  --bg-elevated:   #0e1018;
+  --bg-card:       #11131d;
+
+  --border-dim:    rgba(255,255,255,0.06);
+  --border-bright: rgba(0,240,180,0.25);
+
+  --cyan:          #00f0b4;
+  --cyan-dim:      rgba(0,240,180,0.15);
+  --cyan-glow:     rgba(0,240,180,0.4);
+  --electric:      #00e5ff;
+  --acid:          #b4ff00;
+  --red-hot:       #ff3b5c;
+
+  --text-primary:  #e8eaf0;
+  --text-secondary:#8a8fa8;
+  --text-muted:    #3d4260;
+
+  --font-display:  'Syne', sans-serif;
+  --font-mono:     'Share Tech Mono', monospace;
+  --font-body:     'DM Sans', sans-serif;
+
+  --radius-sm:  6px;
+  --radius-md:  12px;
+  --radius-lg:  20px;
+
+  --glow-cyan:  0 0 20px rgba(0,240,180,0.3), 0 0 60px rgba(0,240,180,0.1);
+  --glow-card:  0 0 0 1px rgba(0,240,180,0.12), 0 20px 60px rgba(0,0,0,0.6);
+}
+
+*, *::before, *::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html { scroll-behavior: smooth; }
+
+body {
+  font-family: var(--font-body);
+  background: var(--bg-void);
+  color: var(--text-primary);
+  overflow-x: hidden;
+  -webkit-font-smoothing: antialiased;
+}
+
+/* Scanline overlay on entire page */
+body::before {
+  content: '';
+  position: fixed;
+  inset: 0;
+  background: repeating-linear-gradient(
+    0deg,
+    transparent,
+    transparent 2px,
+    rgba(0,0,0,0.03) 2px,
+    rgba(0,0,0,0.03) 4px
+  );
+  pointer-events: none;
+  z-index: 9999;
+}
+
+/* ---- MAIN APP CONTAINER ---- */
+.main-app-container {
+  width: 100%;
+  position: relative;
+  --mouse-x: 50vw;
+  --mouse-y: 50vh;
+}
+
+/* Subtle cursor glow */
+.main-app-container::after {
+  content: '';
+  position: fixed;
+  left: var(--mouse-x);
+  top: var(--mouse-y);
+  width: 300px;
+  height: 300px;
+  background: radial-gradient(circle, rgba(0,240,180,0.06) 0%, transparent 70%);
+  border-radius: 50%;
+  pointer-events: none;
+  z-index: 1;
+  transform: translate(-50%, -50%);
+  transition: left 0.4s ease-out, top 0.4s ease-out;
+}
+
+/* Section wrappers */
+.heroSection, .Product, .Services, .Contact, .Footer {
+  width: 100%;
+  position: relative;
+  overflow: hidden;
+  z-index: 2;
+}
+
+/* ---- GLOBAL REUSABLE ---- */
+.section-label {
+  font-family: var(--font-mono);
+  font-size: 0.7rem;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: var(--cyan);
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-bottom: 16px;
+}
+.section-label::before {
+  content: '';
+  width: 24px;
+  height: 1px;
+  background: var(--cyan);
+}
+
+.section-heading {
+  font-family: var(--font-display);
+  font-weight: 800;
+  font-size: clamp(2rem, 5vw, 3.8rem);
+  line-height: 1.05;
+  letter-spacing: -0.02em;
+  color: var(--text-primary);
+}
+
+.section-heading .accent {
+  color: var(--cyan);
+  -webkit-text-stroke: 0px;
+}
+
+/* Grid noise texture utility */
+.grid-bg {
+  background-image:
+    linear-gradient(rgba(0,240,180,0.03) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(0,240,180,0.03) 1px, transparent 1px);
+  background-size: 48px 48px;
+}
