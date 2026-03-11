@@ -63,7 +63,7 @@ const HeroSection = () => {
       </div>
 
       <div className="bg-img">
-        <img src="https://kind-rose-csrvjkg5dr.edgeone.app/hero-img.png" alt="Universe Logic Platform" />
+        <img src="https://i.postimg.cc/zDQKLdqD/hero_img.png" alt="Universe Logic Platform" />
       </div>
     </div>
   );
