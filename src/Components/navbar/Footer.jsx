@@ -15,10 +15,10 @@ const Footer = () => {
             Simplifying business operations with smart software solutions. Helping companies streamline and grow through innovation.
           </p>
           <div className="social-links">
-            <a href="#" aria-label="Facebook"><img src="/src/assets/facebook.png" alt="Facebook" /></a>
-            <a href="#" aria-label="LinkedIn"><img src="/src/assets/linkedin.png" alt="LinkedIn" /></a>
-            <a href="#" aria-label="Twitter"><img src="/src/assets/twitter.png" alt="Twitter" /></a>
-            <a href="https://www.instagram.com/dev_saquib?igsh=MTI4MmduanNtNGwzOQ==" aria-label="Instagram"><img src="/src/assets/instagram.png" alt="Instagram" /></a>
+            <a href="#" aria-label="Facebook"><img src="https://i.postimg.cc/PJrZmZ0v/facebook.png" alt="Facebook" /></a>
+            <a href="#" aria-label="LinkedIn"><img src="https://i.postimg.cc/yxY9F929/linkedin.png" alt="LinkedIn" /></a>
+            <a href="#" aria-label="Twitter"><img src="https://i.postimg.cc/8cPWhWxv/twitter.png" alt="Twitter" /></a>
+            <a href="https://www.instagram.com/dev_saquib?igsh=MTI4MmduanNtNGwzOQ==" aria-label="Instagram"><img src="https://inquisitive-magenta-kuwsjjwl4t.edgeone.app/instagram.png" alt="Instagram" /></a>
           </div>
         </div>
 
